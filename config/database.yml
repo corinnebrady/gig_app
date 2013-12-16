@@ -1,0 +1,29 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: gig_app_development
+  pool: 5
+  host: localhost
+  username: corinne2
+  password:
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: gig_app_test
+  pool: 5
+  username: corinne2
+  host: localhost
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: gig_app_production
+  pool: 5
+  username: gig_app
+  password:
+
+cucumber:
+  <<: *test
