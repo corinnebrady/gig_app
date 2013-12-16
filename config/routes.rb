@@ -26,6 +26,8 @@ GigApp::Application.routes.draw do
 
   get "artist/show"
 
+
+
   devise_for :user
 
   root :to => "pages#index"
