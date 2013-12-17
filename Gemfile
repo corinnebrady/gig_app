@@ -13,6 +13,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'ffaker'
 
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'

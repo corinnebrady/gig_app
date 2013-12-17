@@ -1,37 +1,35 @@
 GigApp::Application.routes.draw do
 
-  get "event/new"
+  # get "event/new"
 
-  get "event/create"
+  # get "event/create"
 
-  get "event/destroy"
+  # get "event/destroy"
 
-  get "event/edit"
+  # get "event/edit"
 
-  get "event/update"
+  # get "event/update"
 
-  get "event/index"
+  # get "event/index"
 
-  get "artist/new"
+  # get "artist/new"
 
-  get "artist/create"
+  # get "artist/create"
 
-  get "artist/destroy"
+  # get "artist/destroy"
 
-  get "artist/edit"
+  # get "artist/edit"
 
-  get "artist/update"
+  # get "artist/update"
 
-  get "artist/index"
+  # get "artist/index"
 
-  get "artist/show"
-
-
-
+  # get "artist/index"
 
   devise_for :user
 
   root :to => "pages#index"
 
-  # resources :artists
+  resources :artists
+  resources :events
 end

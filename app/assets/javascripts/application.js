@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require 'handlebars-v1.1.2'
+//= require backbone
 //= require_tree .
