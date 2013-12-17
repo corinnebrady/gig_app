@@ -3,9 +3,9 @@ require 'spec_helper'
 describe ArtistsController, :type => :controller do
 
   describe "GET :index" do
-    before do
-      FactoryGirl.create_list(:artist, 3)
-    end
+    # before do
+    #   FactoryGirl.create_list(:artist, 3)
+    # end
 
     describe "as HTML" do
       before do
@@ -27,7 +27,6 @@ describe ArtistsController, :type => :controller do
 
   describe "GET :show" do
     before do
-      # FactoryGirl.create_list(:artist, 3)
       @artist = FactoryGirl.create(:artist)
     end
 
@@ -171,6 +170,40 @@ describe ArtistsController, :type => :controller do
       response.should redirect_to artists_path
     end
   end
+
+
+  describe "GET :fetch" do
+    before do
+    #   FactoryGirl.create_list(:artist, 3)
+      artist1 = FactoryGirl.create(:artist, name: "Mac DeMarco")
+      artist2 = FactoryGirl.create(:artist, name: "Scotdrakula")
+      artist3 = FactoryGirl.create(:artist, name: "Elvis")
+      artist4 = FactoryGirl.create(:artist, name: "Ben David")
+
+
+
+    # THIS should be the output of the first each loop:  user.artists = { "Melody Gardot" => true, "Elvis" => true }
+    # Will users.artists come out as an array? is that what I have to convert to a hash? Then the artist will have two things (and id and a name)
+    # in that case the very first thing i need to do is that each loop
+
+    end
+
+    describe "as HTML" do
+      before do
+        get :fetch
+      end
+
+      it "should respond with a status 200" do
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+
+      it "should render the fetch template" do
+        expect(response).to render_template("fetch")
+      end
+    end
+  end
+
 
 
 end

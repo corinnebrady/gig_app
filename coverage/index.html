@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-17T12:26:01+11:00">2013-12-17T12:26:01+11:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-17T23:12:23+11:00">2013-12-17T23:12:23+11:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.83
+         1.81
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>47</b> files in total.
-    <b>309</b> relevant lines. 
-    <span class="green"><b>309</b> lines covered</span> and
+    <b>315</b> relevant lines. 
+    <span class="green"><b>315</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#a577b86c630ca00bc635ebc2ceff3925f461fc10" class="src_link" title="app/controllers/artists_controller.rb">app/controllers/artists_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>45</td>
-        <td>24</td>
-        <td>24</td>
+        <td>97</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -283,9 +283,9 @@
       <tr>
         <td class="strong"><a href="#636c6be107e504aa3c4d68831090896e76d94283" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>35</td>
-        <td>5</td>
-        <td>5</td>
+        <td>11</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -293,7 +293,7 @@
       <tr>
         <td class="strong"><a href="#aa7d311ae7b5ee9872b1244e5f1367a802746d18" class="src_link" title="spec/controllers/events_controller_spec.rb">spec/controllers/events_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>308</td>
+        <td>188</td>
         <td>99</td>
         <td>99</td>
         <td>0</td>
@@ -317,7 +317,7 @@
         <td>19</td>
         <td>19</td>
         <td>0</td>
-        <td>9.2</td>
+        <td>8.9</td>
       </tr>
       
       <tr>
@@ -577,8 +577,8 @@
     <h3>app/controllers/artists_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -853,7 +853,319 @@
         <li class="never" data-hits="" data-linenumber="45">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def fetch</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="49">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @location = &#39;sydney&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="51">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    url = &quot;http://ws.audioscrobbler.com/2.0/?method=geo.getevents&amp;location=#{@location}&amp;api_key=d5457080d2066b9f7a7da03055cc8181&amp;format=json&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="53">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @events_data = HTTParty.get url</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="54">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @events = JSON @events_data</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    # raise params</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    # lastfm = Lastfm.new(&#39;d5457080d2066b9f7a7da03055cc8181&#39;, &#39;ce00c617001acbe8df65bbd0523f131e&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">    # token = lastfm.auth.get_token</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">    # lastfm.session = lastfm.auth.get_session(:token =&gt; token)[&#39;key&#39;]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">      # events = lastfm.geo.get_events(:location =&gt; &#39;Sydney&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">      # events.each do |event| #might need to be events.data.each (check out params)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">      #   Event.create(event) # except more better</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">      # find artist</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">          # attach it to specific artist</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">      # make sure not to duplicate</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">      # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">      # raise params.inspect</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby"></code>
         </li>
       
     </ol>
@@ -4741,8 +5053,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4762,10 +5074,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # get &quot;event/new&quot;</code>
+          <code class="ruby">  root :to =&gt; &quot;pages#index&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -4774,10 +5086,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # get &quot;event/create&quot;</code>
+          <code class="ruby">  devise_for :user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -4786,10 +5098,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # get &quot;event/destroy&quot;</code>
+          <code class="ruby">  get &quot;/artists/fetch&quot; =&gt; &#39;artists#fetch&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -4798,163 +5110,19 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">  # get &quot;event/edit&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">  # get &quot;event/update&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">  # get &quot;event/index&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">  # get &quot;artist/new&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">  # get &quot;artist/create&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  # get &quot;artist/destroy&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  # get &quot;artist/edit&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  # get &quot;artist/update&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">  # get &quot;artist/index&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  # get &quot;artist/index&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  devise_for :user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  root :to =&gt; &quot;pages#index&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  resources :artists</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">  resources :events</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">end</code>
@@ -6106,726 +6274,6 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="189">
-          
-          
-          <code class="ruby">#   describe &quot;GET &#39;index&#39;&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="190">
-          
-          
-          <code class="ruby">#     before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="191">
-          
-          
-          <code class="ruby">#       FactoryGirl.create_list(:event, 3)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="192">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="193">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="194">
-          
-          
-          <code class="ruby">#     describe &quot;as HTML&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="195">
-          
-          
-          <code class="ruby">#       before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="196">
-          
-          
-          <code class="ruby">#         get :index</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="197">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="198">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="199">
-          
-          
-          <code class="ruby">#       it &quot;should respond with a status 200&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="200">
-          
-          
-          <code class="ruby">#         expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="201">
-          
-          
-          <code class="ruby">#         expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="202">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="203">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="204">
-          
-          
-          <code class="ruby">#       it &quot;should render the index template&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="205">
-          
-          
-          <code class="ruby">#         expect(response).to render_template(&quot;index&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="206">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="207">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="208">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="209">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="210">
-          
-          
-          <code class="ruby">#   describe &quot;GET &#39;new&#39;&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="211">
-          
-          
-          <code class="ruby">#     describe &quot;as HTML&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="212">
-          
-          
-          <code class="ruby">#       before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="213">
-          
-          
-          <code class="ruby">#         get :new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="214">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="215">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="216">
-          
-          
-          <code class="ruby">#       it &quot;should respond with a status 200&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="217">
-          
-          
-          <code class="ruby">#         expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="218">
-          
-          
-          <code class="ruby">#         expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="219">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="220">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="221">
-          
-          
-          <code class="ruby">#       it &quot;should render the new template&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="222">
-          
-          
-          <code class="ruby">#         expect(response).to render_template(&quot;new&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="223">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="224">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="225">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="226">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="227">
-          
-          
-          <code class="ruby">#   describe &quot;GET &#39;create&#39;&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="228">
-          
-          
-          <code class="ruby">#     describe &quot;as HTML&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="229">
-          
-          
-          <code class="ruby">#       before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="230">
-          
-          
-          <code class="ruby">#         get :create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="231">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="232">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="233">
-          
-          
-          <code class="ruby">#       it &quot;should respond with a status 200&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="234">
-          
-          
-          <code class="ruby">#         expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="235">
-          
-          
-          <code class="ruby">#         expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="236">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="237">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="238">
-          
-          
-          <code class="ruby">#       it &quot;should render the create template&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="239">
-          
-          
-          <code class="ruby">#         expect(response).to render_template(&quot;create&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="240">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="241">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="242">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="243">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="244">
-          
-          
-          <code class="ruby">#   describe &quot;GET &#39;destroy&#39;&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="245">
-          
-          
-          <code class="ruby">#     before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="246">
-          
-          
-          <code class="ruby">#       FactoryGirl.create_list(:event, 3)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="247">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="248">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="249">
-          
-          
-          <code class="ruby">#     describe &quot;as HTML&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="250">
-          
-          
-          <code class="ruby">#       before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="251">
-          
-          
-          <code class="ruby">#         get :destroy</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="252">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="253">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="254">
-          
-          
-          <code class="ruby">#       it &quot;should respond with a status 200&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="255">
-          
-          
-          <code class="ruby">#         expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="256">
-          
-          
-          <code class="ruby">#         expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="257">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="258">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="259">
-          
-          
-          <code class="ruby">#       it &quot;should render the destroy template&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="260">
-          
-          
-          <code class="ruby">#         expect(response).to render_template(&quot;destroy&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="261">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="262">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="263">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="264">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="265">
-          
-          
-          <code class="ruby">#   describe &quot;GET &#39;edit&#39;&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="266">
-          
-          
-          <code class="ruby">#     before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="267">
-          
-          
-          <code class="ruby">#       FactoryGirl.create_list(:event, 3)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="268">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="269">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="270">
-          
-          
-          <code class="ruby">#     describe &quot;as HTML&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="271">
-          
-          
-          <code class="ruby">#       before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="272">
-          
-          
-          <code class="ruby">#         get :edit</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="273">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="274">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="275">
-          
-          
-          <code class="ruby">#       it &quot;should respond with a status 200&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="276">
-          
-          
-          <code class="ruby">#         expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="277">
-          
-          
-          <code class="ruby">#         expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="278">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="279">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="280">
-          
-          
-          <code class="ruby">#       it &quot;should render the edit template&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="281">
-          
-          
-          <code class="ruby">#         expect(response).to render_template(&quot;edit&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="282">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="283">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="284">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="285">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="286">
-          
-          
-          <code class="ruby">#   describe &quot;GET &#39;update&#39;&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="287">
-          
-          
-          <code class="ruby">#     before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="288">
-          
-          
-          <code class="ruby">#       FactoryGirl.create_list(:event, 3)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="289">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="290">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="291">
-          
-          
-          <code class="ruby">#     describe &quot;as HTML&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="292">
-          
-          
-          <code class="ruby">#       before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="293">
-          
-          
-          <code class="ruby">#         get :update</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="294">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="295">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="296">
-          
-          
-          <code class="ruby">#       it &quot;should respond with a status 200&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="297">
-          
-          
-          <code class="ruby">#         expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="298">
-          
-          
-          <code class="ruby">#         expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="299">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="300">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="301">
-          
-          
-          <code class="ruby">#       it &quot;should render the update template&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="302">
-          
-          
-          <code class="ruby">#         expect(response).to render_template(&quot;update&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="303">
-          
-          
-          <code class="ruby">#       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="304">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="305">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="306">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="307">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="308">
-          
-          
-          <code class="ruby"># end</code>
-        </li>
-      
     </ol>
   </pre>
 </div>
@@ -7000,8 +6448,8 @@
           <code class="ruby">  factory :artist do |f|</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="12">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="19" data-linenumber="12">
+          <span class="hits">19</span>
           
           <code class="ruby">    name { Faker::HipsterIpsum.words(rand(1..3)).join &#39; &#39; }</code>
         </li>

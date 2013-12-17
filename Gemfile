@@ -8,6 +8,7 @@ gem 'carrierwave'
 gem "fog", "~> 1.3.1" #required for carrierwave s3
 
 gem "lastfm", "~> 1.21.0"
+gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails'
