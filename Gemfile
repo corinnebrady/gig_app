@@ -7,6 +7,7 @@ gem 'bcrypt-ruby', '3.0.0'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1" #required for carrierwave s3
 
+gem "lastfm", "~> 1.21.0"
 
 group :development, :test do
   gem 'rspec-rails'
