@@ -1,3 +1,10 @@
 Wishlist/Future
 - user able to select multiple locations
 - use api to pull artist data instead of manual input
+
+
+
+QUESTIONS
+- how do i convert an array into a hash with all the values equal to true?
+- how do i write the test to check if the user.artists array is right???
+-

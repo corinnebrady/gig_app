@@ -45,8 +45,14 @@ class ArtistsController < ApplicationController
 
 
   def fetch
+    # FIX THIS!!!
+    user.artists = ["Mac DeMarco", "Scotdrakula", "Elvis", "Ben David"]
 
-    @location = 'sydney'
+    artists_array = user.artists
+    artists_hash = Hash[*artists_array.map {|x| [x, nil]}.flatten]
+
+    # FIX THIS!!!
+    @location = 'sydney' # find the user's location (user.location)
 
     url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{@location}&api_key=d5457080d2066b9f7a7da03055cc8181&format=json"
 
