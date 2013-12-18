@@ -1,1 +1,9 @@
 <h1>Artist#edit</h1>
+
+<%= form_tag artists_update_all_path do |f| %>
+
+  <%= render :partial => 'artists/artist_form' %>
+
+  <%= submit_tag %>
+
+<% end %>

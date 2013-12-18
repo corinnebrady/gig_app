@@ -1,0 +1,15 @@
+<h1>Quick Search</h1>
+
+
+<%= form_tag pages_show_all_qs_path do  %>
+
+  <%= label_tag :location %><br />
+  <%= text_field_tag :location %></div>
+
+
+  <%= render :partial => 'artists/artist_form' %>
+
+  <%= submit_tag %>
+
+<% end %>
+

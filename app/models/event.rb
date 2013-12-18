@@ -23,7 +23,7 @@ class Event < ActiveRecord::Base
 
 
   # Event.fetch_for_user current_user
-  def self.fetch_for_user(user)
+  def self.fetch_by_user(user)
     # user_artists = user.artists.map &:name
     # Code below is not longer necessary but it is how you create a hash from an array with all values equal to true
     # @artists_hash = Hash[*artists_array.map {|x| [x, nil]}.flatten]
@@ -61,7 +61,7 @@ class Event < ActiveRecord::Base
             :title => event['title'],
             :street => event['venue']['location']['street'],
             :city => event['venue']['location']['city'],
-            :date => event['venue']['name'],
+            :date => Date.parse(event['startDate']),
             :venue => event['venue']['name'],
             :website => event['venue']['website'],
             :artist_id => artist.id
@@ -80,8 +80,11 @@ class Event < ActiveRecord::Base
     # lastfm.session = lastfm.auth.get_session(:token => token)['key']
   end
 
+
+
+
   # @events = Event.fetch_by_artist(['Making', 'Dappled Cities'], 'Sydney')
-  def self.fetch_by_artist(artists, location)
+  def self.fetch_by_artist(artist_names, location)
     # user_artists = user.artists.map &:name
     # Code below is not longer necessary but it is how you create a hash from an array with all values equal to true
     # @artists_hash = Hash[*artists_array.map {|x| [x, nil]}.flatten]
@@ -108,19 +111,37 @@ class Event < ActiveRecord::Base
     end
 
     matched_events = []
-    artists.each do |artist|
-      if events_by_artist[artist]
-        # Create each event
+
+
+    if artist_names.nil?
+      events_by_artist.keys.each do |artist|
         events_by_artist[artist].each do |event|
           event = Event.new({
             :title => event['title'],
             :street => event['venue']['location']['street'],
             :city => event['venue']['location']['city'],
-            :date => event['venue']['name'],
+            :date => event['venue']['startDate'],
             :venue => event['venue']['name'],
-            :website => event['venue']['website'],
+            :website => event['venue']['website']
           })
           matched_events.push(event)
+        end
+      end
+    else
+      artists.each do |artist|
+        if events_by_artist[artist]
+          # Create each event
+          events_by_artist[artist].each do |event|
+            event = Event.new({
+              :title => event['title'],
+              :street => event['venue']['location']['street'],
+              :city => event['venue']['location']['city'],
+              :date => event['venue']['startDate'],
+              :venue => event['venue']['name'],
+              :website => event['venue']['website']
+            })
+            matched_events.push(event)
+          end
         end
       end
     end

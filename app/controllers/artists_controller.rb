@@ -23,7 +23,6 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist= Artist.find params[:id]
     render :edit
   end
 
@@ -34,6 +33,23 @@ class ArtistsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def update_all
+    # Handle new artists
+    if params[:new_artist].present?
+      params[:new_artist].each do |artist|
+        Artist.create(:name => artist, :user_id => current_user.id)
+      end
+    end
+
+    # Handle updates
+    params[:artist].each do |id, artist|
+      a = Artist.find id
+      a.name = artist
+      a.save
+    end
+    redirect_to edit_artists_path
   end
 
   def destroy

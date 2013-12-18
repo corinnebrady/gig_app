@@ -3,14 +3,16 @@ $(document).ready (function () {
 var artists = [];
 
 $('#add_artist').click(function () {
-    $('<li/>').text( $('#artist').val() ).appendTo('#artists_display');
+    var $input = $('<input>', {name: "new_artist[]"}).val($('#artist').val());
+    $('<li/>').html($input).prependTo('#artists_display');
 
-    artists.push( $('#artist').val() );
+    // artists.push( $('#artist').val() );
     $('#artist').val('').focus();
 
-    $('#artist_names').val( artists.join(',') );
-    console.log(artists);
+    // $('#artist_names').val( artists.join(',') );
+    // console.log(artists);
 });
+
 
 
 });

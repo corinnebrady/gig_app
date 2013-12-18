@@ -1,17 +1,30 @@
 Wishlist/Future
 - user able to select multiple locations
 - use api to pull artist data instead of manual input
+- only poll api for a specific city once a day and use that saved data to populate users' gig lists throughout that 24hour period (reduce api requests)
+- send weekly/monthly emails about upcomming gigs
+- make a calendar view for gigs (instead of just show_all)
+
+
 
 
 
 QUESTIONS
-- how do i write the test to check if the user.artists array is right??? or if the hash was created?
-- how do i search if the artish_hash keys match with the event? The event is an
+- how do I change
 
-{"events":{"event":[{"id":"3721715","title":"Mac DeMarco","artists":{"artist":["Mac DeMarco","Jesse Davidson","Scotdrakula"],"headliner":"Mac DeMarco"},...
 
-hash>hash>array>hash>hash>array
 
-{"events":{"event":[{...,"artists":{"artist":["Mac DeMarco","Jesse Davidson","Scotdrakula"],"headliner":"Mac DeMarco"},...
 
-- do i still need to check for duplicates? since i'm only looking at each event once? will i only need to worry about duplicates if they like two artists at the same show?
+TO DO
+- multiple events!
+- make location mandatory for user
+- delete all uunused views
+- add description to events
+- make single event show page (maybe include images from events as well?)
+- change date format (search ruby date format)
+
+
+
+
+
+
