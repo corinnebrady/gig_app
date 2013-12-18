@@ -45,7 +45,7 @@ class ArtistsController < ApplicationController
 
   def fetch
     Event.fetch( User.first )
-    raise params.inspect
+    # raise params.inspect
   end
 
 end
