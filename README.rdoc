@@ -5,6 +5,13 @@ Wishlist/Future
 
 
 QUESTIONS
-- how do i convert an array into a hash with all the values equal to true?
-- how do i write the test to check if the user.artists array is right???
--
+- how do i write the test to check if the user.artists array is right??? or if the hash was created?
+- how do i search if the artish_hash keys match with the event? The event is an
+
+{"events":{"event":[{"id":"3721715","title":"Mac DeMarco","artists":{"artist":["Mac DeMarco","Jesse Davidson","Scotdrakula"],"headliner":"Mac DeMarco"},...
+
+hash>hash>array>hash>hash>array
+
+{"events":{"event":[{...,"artists":{"artist":["Mac DeMarco","Jesse Davidson","Scotdrakula"],"headliner":"Mac DeMarco"},...
+
+- do i still need to check for duplicates? since i'm only looking at each event once? will i only need to worry about duplicates if they like two artists at the same show?

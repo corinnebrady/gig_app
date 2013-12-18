@@ -172,41 +172,6 @@ describe ArtistsController, :type => :controller do
   end
 
 
-  describe "GET :fetch" do
-    before do
-      @user = FactoryGirl.create(:user)
-      @user.artists = [ FactoryGirl.create(:artist, name: "Mac DeMarco"), FactoryGirl.create(:artist, name: "Scotdrakula"), FactoryGirl.create(:artist, name: "Elvis"), FactoryGirl.create(:artist, name: "Ben David") ]
-
-      # THIS should be the output of the first each loop:  user.artists = { "Melody Gardot" => true, "Elvis" => true }
-      # Will users.artists come out as an array? is that what I have to convert to a hash? Then the artist will have two things (and id and a name)
-      # in that case the very first thing i need to do is that each loop
-    end
-
-    it "should add ' => true' to each user in users.artists array" do
-      # i don't even know what the user.artists array will look like.  Will it be the user names in quotes? their ids? Fuck.
-    end
-
-    # it "converts users.artists array into a hash" do
-    # end
-
-    describe "as HTML" do
-      before do
-        get :fetch
-      end
-
-      it "should respond with a status 200" do
-        expect(response).to be_success
-        expect(response.status).to eq(200)
-      end
-
-      it "should render the fetch template" do
-        expect(response).to render_template("fetch")
-      end
-    end
-  end
-
-
-
 end
 
 

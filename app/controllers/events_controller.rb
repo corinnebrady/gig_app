@@ -1,29 +1,5 @@
 class EventsController < ApplicationController
 
-  # def index
-  # end
-
-  # def show
-  #   @artist = Event.find params[:id]
-  # end
-
-  # def new
-  # end
-
-  # def create
-  # end
-
-  # def edit
-  # end
-
-  # def update
-  # end
-
-  # def destroy
-  # end
-
-
-
   def index
     @event = Event.all
   end
@@ -64,5 +40,8 @@ class EventsController < ApplicationController
     event.destroy
     redirect_to events_path
   end
+
+
+
 
 end
