@@ -23,15 +23,18 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to('Sign Up', new_user_registration_path) %></li>
-            <li><%= link_to('Sign In', new_user_session_path) %></li>
-            <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
-            <li><%= link_to('Edit Account', edit_user_registration_path) %></li>
-            <li><%= link_to('Artists', artists_path) %></li>
+              <li><%= link_to('Quick Search', pages_search_path) %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to('My Events', events_show_all_path) %></li>
+              <li><%= link_to('My Artists', edit_artists_path) %></li>
+              <li><%= link_to('Edit Account', edit_user_registration_path) %></li>
+              <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+              <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+              <li><%= link_to('Sign In', new_user_session_path) %></li>
+            <% end %>
 
-
-  <!--           < %== authentication_menu %>
-   -->        </ul>
+        </ul>
 
         </div><!--/.nav-collapse -->
       </div> <!-- .container -->

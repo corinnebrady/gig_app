@@ -22,6 +22,10 @@ TO DO
 - add description to events
 - make single event show page (maybe include images from events as well?)
 - change date format (search ruby date format)
+- fuzzy matching
+- autocomplete for artists
+- lower case all artists so they match when searched (lower case both sides)
+
 
 
 

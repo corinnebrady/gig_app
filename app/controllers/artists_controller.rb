@@ -44,12 +44,18 @@ class ArtistsController < ApplicationController
     end
 
     # Handle updates
-    params[:artist].each do |id, artist|
-      a = Artist.find id
-      a.name = artist
-      a.save
+    if params[:artist].present?
+      params[:artist].each do |id, artist|
+        a = Artist.find id
+        if artist.nil? || artist == ''
+          a.destroy
+        else
+          a.name = artist
+          a.save
+        end
+      end
     end
-    redirect_to edit_artists_path
+    redirect_to events_show_all_path
   end
 
   def destroy
