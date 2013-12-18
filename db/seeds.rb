@@ -2,7 +2,7 @@ User.destroy_all
 Artist.destroy_all
 Event.destroy_all
 
-u1 = User.create(:email => 'b@email.com', :password => 'password')
+u1 = User.create(:email => 'b@email.com', :password => 'password', :location => 'sydney')
 
 
 a1 = Artist.create(:name => "Waits")

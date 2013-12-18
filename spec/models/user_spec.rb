@@ -15,6 +15,7 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  encrypted_password     :string(255)      default(""), not null
+#  location               :string(255)
 #
 
 require 'spec_helper'

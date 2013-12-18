@@ -15,6 +15,7 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  encrypted_password     :string(255)      default(""), not null
+#  location               :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -24,7 +25,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :location
 
 
   validates :email, :presence => true
