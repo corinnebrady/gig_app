@@ -15,6 +15,8 @@ Future
 
 TO DO
 
+- HOW DO I DO UNLESS IN SHOW_ALL?
+
 - fuzzy matching
 
 - make single event show page (maybe include images from events as well?)
