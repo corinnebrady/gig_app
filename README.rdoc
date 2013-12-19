@@ -1,32 +1,28 @@
-Wishlist/Future
+Wishlist/
 - user able to select multiple locations
 - use api to pull artist data instead of manual input
 - only poll api for a specific city once a day and use that saved data to populate users' gig lists throughout that 24hour period (reduce api requests)
 - send weekly/monthly emails about upcomming gigs
 - make a calendar view for gigs (instead of just show_all)
+- autocomplete for artists
 
-
-
-
-
-QUESTIONS
-- how do I change
+Future
+- reduce code ducplication
+- alert when location doesn't match with lastfm's locaiton list
 
 
 
 
 TO DO
-- multiple events!
-- make location mandatory for user
-- delete all uunused views
-- add description to events
-- make single event show page (maybe include images from events as well?)
-- change date format (search ruby date format)
+
 - fuzzy matching
-- autocomplete for artists
-- lower case all artists so they match when searched (lower case both sides)
+
+- make single event show page (maybe include images from events as well?)
 
 
+- delete all unused views
+
+- FIX: if title, artist, and headliner are all equal, only display one
 
 
 

@@ -1,7 +1,31 @@
 <h1>Show All Events</h1>
-<ul>
+
+
+<% if @events.empty? %>
+  <p>Sorry, there are no gigs coming up!</p>
+<% else %>
+
+  <% displayed_events = {} %>
+
   <% @events.each do |event| %>
-    <li> <%= event.date %> -- <%= event.title %></li>
+    <% next if displayed_events[event.lastfm_id] %>
+
+    <h3><%= event.title %></h3>
+    <ul>
+      <li>date <%= event.date.time.strftime("%b %-d, %Y") %></li>
+      <li>street <%= event.street %></li>
+      <li>city <%= event.city %></li>
+      <li>venue <%= event.venue %></li>
+      <li>website <%= link_to 'More Info', event.website %></li> <!-- unless < % event.website %> == nil -->
+      <li>lastfm_id <%= event.lastfm_id %></li>
+      <li>artists <%= event.artists %></li>
+      <li>headliner <%= event.headliner %></li>
+      <li>description <%== event.description %></li>
+      <li>image <%= image_tag event.image %></li>
+    </ul>
+
+    <% displayed_events[event.lastfm_id] = true %>
 
   <% end %>
-</ul>
+<% end %>
+

@@ -2,16 +2,21 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  venue      :string(255)
-#  city       :string(255)
-#  street     :string(255)
-#  date       :datetime
-#  website    :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  artist_id  :integer
-#  title      :string(255)
+#  id              :integer          not null, primary key
+#  venue           :string(255)
+#  city            :string(255)
+#  street          :string(255)
+#  date            :datetime
+#  tickets_website :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  artist_id       :integer
+#  title           :string(255)
+#  lastfm_id       :integer
+#  artists         :text
+#  headliner       :string(255)
+#  description     :text
+#  image           :text
 #
 
 require 'spec_helper'

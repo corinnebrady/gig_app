@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
 
 
   validates :email, :presence => true
+  validates :location, :presence => true
 
   has_many :artists
   has_many :events, :through => :artists

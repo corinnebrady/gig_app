@@ -6,12 +6,13 @@ class PagesController < ApplicationController
   end
 
   def show_all_qs
-    artists_array = params[:artists] ? params[:artists].split(/[, ]+/) : nil
+    artists_array = params[:new_artist] || nil
 
     location = params[:location] || 'sydney'
 
     @events = Event.fetch_by_artist artists_array, location
-    # do i need to run an if statement to see if they input an artist?
+
+    render 'events/show_all'
   end
 
 end

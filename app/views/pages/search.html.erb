@@ -3,9 +3,11 @@
 
 <%= form_tag pages_show_all_qs_path do  %>
 
-  <%= label_tag :location %><br />
-  <%= text_field_tag :location %></div>
+  <%= label_tag :location %>
+  <%= text_field_tag :location, nil, :required => true, :placeholder => 'City' %>
 
+  <br>
+  <br>
 
   <%= render :partial => 'artists/artist_form' %>
 

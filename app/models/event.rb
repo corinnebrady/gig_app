@@ -2,101 +2,86 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  venue      :string(255)
-#  city       :string(255)
-#  street     :string(255)
-#  date       :datetime
-#  website    :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  artist_id  :integer
-#  title      :string(255)
+#  id              :integer          not null, primary key
+#  venue           :string(255)
+#  city            :string(255)
+#  street          :string(255)
+#  date            :datetime
+#  tickets_website :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  artist_id       :integer
+#  title           :string(255)
+#  lastfm_id       :integer
+#  artists         :text
+#  headliner       :string(255)
+#  description     :text
+#  image           :text
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :street, :city, :date, :venue, :website, :artist_id, :title
+  attr_accessible :street, :city, :date, :venue, :website, :artist_id, :title, :lastfm_id, :artists, :headliner, :description, :image, :tickets_website
 
   validates :city, :presence => true
 
   belongs_to :artist
 
 
-  # Event.fetch_for_user current_user
   def self.fetch_by_user(user)
-    # user_artists = user.artists.map &:name
     # Code below is not longer necessary but it is how you create a hash from an array with all values equal to true
     # @artists_hash = Hash[*artists_array.map {|x| [x, nil]}.flatten]
 
-    # FIX THIS!!!
-    @location = 'sydney' # find the user's location (user.location)
-
-
-    url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{@location}&api_key=d5457080d2066b9f7a7da03055cc8181&format=json"
-
+    # location = current_user.location
+    location = 'sydney'
+    url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&api_key=d5457080d2066b9f7a7da03055cc8181&format=json&limit=200"
     @events = HTTParty.get url
-    # @events = JSON @events_data
-    # raise params.inspect
 
     events_by_artist = {}
-
     @events['events']['event'].each do |event|
       artists = event['artists']['artist']
       if artists.kind_of? String
-        events_by_artist[ artists ] ||= [] # the first instance of that artist will set up the array
-        events_by_artist[ artists ].push event # subsequent instances of that artist will add events withint that above array
+        events_by_artist[ artists.downcase ] ||= [] # the first instance of that artist will set up the array
+        events_by_artist[ artists.downcase ].push event # subsequent instances of that artist will add events withint that above array
       else
         artists.each do |artist|
-          events_by_artist[ artist ] ||= []
-          events_by_artist[ artist ].push event
+          events_by_artist[ artist.downcase ] ||= []
+          events_by_artist[ artist.downcase ].push event
         end
       end
     end
 
     user.artists.each do |artist|
-      if events_by_artist[artist.name]
+      if events_by_artist[artist.name.downcase]
         # Create each event
-        events_by_artist[artist.name].each do |event|
+        events_by_artist[artist.name.downcase].each do |event|
           Event.create({
             :title => event['title'],
             :street => event['venue']['location']['street'],
             :city => event['venue']['location']['city'],
             :date => Date.parse(event['startDate']),
             :venue => event['venue']['name'],
-            :website => event['venue']['website'],
-            :artist_id => artist.id
+            :website => event['website'],
+            :artist_id => artist.id,
+            :lastfm_id =>event['id'],
+            :artists => event['artists']['artist'].respond_to?(:join) ? event['artists']['artist'].join(', ')
+                                                                       : event['artists']['artist'],
+            :headliner => event['artists']['headliner'],
+            :description => event['description'],
+            :image => event['image'][3]['#text']
           })
         end
       end
-
-
-    # make sure not to duplicate <--- still need to do this? There WILL be du
-
     end
-
-
-    # lastfm = Lastfm.new('d5457080d2066b9f7a7da03055cc8181', 'ce00c617001acbe8df65bbd0523f131e')
-    # token = lastfm.auth.get_token
-    # lastfm.session = lastfm.auth.get_session(:token => token)['key']
   end
 
 
 
 
-  # @events = Event.fetch_by_artist(['Making', 'Dappled Cities'], 'Sydney')
   def self.fetch_by_artist(artist_names, location)
-    # user_artists = user.artists.map &:name
-    # Code below is not longer necessary but it is how you create a hash from an array with all values equal to true
-    # @artists_hash = Hash[*artists_array.map {|x| [x, nil]}.flatten]
-
-    url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&api_key=d5457080d2066b9f7a7da03055cc8181&format=json"
-
+    url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&api_key=d5457080d2066b9f7a7da03055cc8181&format=json&limit=200"
     @events = HTTParty.get url
-    # @events = JSON @events_data
-    # raise params.inspect
 
     events_by_artist = {}
-
     @events['events']['event'].each do |event|
       artists = event['artists']['artist']
       if artists.kind_of? String
@@ -111,8 +96,6 @@ class Event < ActiveRecord::Base
     end
 
     matched_events = []
-
-
     if artist_names.nil?
       events_by_artist.keys.each do |artist|
         events_by_artist[artist].each do |event|
@@ -120,15 +103,21 @@ class Event < ActiveRecord::Base
             :title => event['title'],
             :street => event['venue']['location']['street'],
             :city => event['venue']['location']['city'],
-            :date => event['venue']['startDate'],
+            :date => Date.parse(event['startDate']),
             :venue => event['venue']['name'],
-            :website => event['venue']['website']
+            :website => event['website'],
+            :lastfm_id =>event['id'],
+            :artists => event['artists']['artist'].respond_to?(:join) ? event['artists']['artist'].join(', ')
+                                                                       : event['artists']['artist'],
+            :headliner => event['artists']['headliner'],
+            :description => event['description'],
+            :image => event['image'][3]['#text']
           })
           matched_events.push(event)
         end
       end
     else
-      artists.each do |artist|
+      artist_names.each do |artist|
         if events_by_artist[artist]
           # Create each event
           events_by_artist[artist].each do |event|
@@ -136,9 +125,15 @@ class Event < ActiveRecord::Base
               :title => event['title'],
               :street => event['venue']['location']['street'],
               :city => event['venue']['location']['city'],
-              :date => event['venue']['startDate'],
+              :date => Date.parse(event['startDate']),
               :venue => event['venue']['name'],
-              :website => event['venue']['website']
+              :website => event['website'],
+              :lastfm_id =>event['id'],
+              :artists => event['artists']['artist'].respond_to?(:join) ? event['artists']['artist'].join(', ')
+                                                                         : event['artists']['artist'],
+              :headliner => event['artists']['headliner'],
+              :description => event['description'],
+              :image => event['image'][3]['#text']
             })
             matched_events.push(event)
           end
@@ -147,6 +142,4 @@ class Event < ActiveRecord::Base
     end
     matched_events
   end
-
-
 end
