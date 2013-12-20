@@ -15,16 +15,12 @@ Future
 
 TO DO
 
-- HOW DO I DO UNLESS IN SHOW_ALL?
-
 - fuzzy matching
 
 - make single event show page (maybe include images from events as well?)
 
 
 - delete all unused views
-
-- FIX: if title, artist, and headliner are all equal, only display one
 
 
 

@@ -1,13 +1,13 @@
-<label for="artist">Artist</label>
 <input id="artist" type="text" placeholder="Artist">
-<input type="button" id="add_artist" value="Add artist">
+<br>
+<input type="button" id="add_artist" value="Add artist" class="general_button">
 <input type="hidden" name="artist_names" id="artist_names">
 
 <ul id="artists_display">
 
   <% if current_user.present? %>
     <% current_user.artists.order(:created_at).reverse.each do |artist| %>
-      <li><%= text_field_tag("artist[#{artist.id}]", artist.name) %></li>
+      <li class="existing_artist"><%= text_field_tag("artist[#{artist.id}]", artist.name) %></li>
     <% end %>
   <% end %>
 </ul>

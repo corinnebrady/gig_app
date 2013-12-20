@@ -1,9 +1,13 @@
-<h1>Artist#edit</h1>
+<div class="page_container">
 
-<%= form_tag artists_update_all_path do |f| %>
+  <h1>Add Artists and Bands</h1>
 
-  <%= render :partial => 'artists/artist_form' %>
+  <%= form_tag artists_update_all_path do |f| %>
 
-  <%= submit_tag %>
+    <%= render :partial => 'artists/artist_form' %>
 
-<% end %>
+
+    <%= submit_tag 'Get Events', :class => 'get_event_button' %>
+
+  <% end %>
+</div>

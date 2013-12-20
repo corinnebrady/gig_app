@@ -1,31 +1,63 @@
-<h1>Show All Events</h1>
+<% if current_user.present? %>
+  <h1><%= current_user.location.capitalize %> Notes:</h1>
+<% else %>
+  <h1><%= params[:location].capitalize %> Notes:</h1>
+<% end %>
+<h1>Upcoming Gigs</h1>
 
 
 <% if @events.empty? %>
   <p>Sorry, there are no gigs coming up!</p>
 <% else %>
-
   <% displayed_events = {} %>
 
-  <% @events.each do |event| %>
-    <% next if displayed_events[event.lastfm_id] %>
 
-    <h3><%= event.title %></h3>
-    <ul>
-      <li>date <%= event.date.time.strftime("%b %-d, %Y") %></li>
-      <li>street <%= event.street %></li>
-      <li>city <%= event.city %></li>
-      <li>venue <%= event.venue %></li>
-      <li>website <%= link_to 'More Info', event.website %></li> <!-- unless < % event.website %> == nil -->
-      <li>lastfm_id <%= event.lastfm_id %></li>
-      <li>artists <%= event.artists %></li>
-      <li>headliner <%= event.headliner %></li>
-      <li>description <%== event.description %></li>
-      <li>image <%= image_tag event.image %></li>
-    </ul>
 
-    <% displayed_events[event.lastfm_id] = true %>
 
-  <% end %>
+    <% @events.each do |event| %>
+      <% next if displayed_events[event.lastfm_id] %>
+
+        <div class="single_event">
+          <div class="show_when">
+            <%= event.date.time.strftime("%b %-d, %Y") %>
+          </div>
+
+          <% if event.image.present? %>
+            <%= image_tag event.image, :class => 'event_image' %>
+          <% end %>
+
+          <div class="show_who">
+              <h3><%= event.title %></h3>
+              <h5><%== event.artists %></h5>
+          </div>
+
+          <div class="show_where">
+            <% if event.venue.present? %>
+              <div class="where"><span class="where_label">Venue: </span><%= event.venue %></div>
+            <% end %>
+            <% if event.city.present? %>
+              <div class="where"><span class="where_label">City: </span><%= event.city %></div>
+            <% end %>
+            <% if event.street.present? %>
+              <div class="where"><span class="where_label">Address: </span><%= event.street %></div>
+            <% end %>
+          </div>
+
+          <% if event.description.present? %>
+            <div class="show_desc">
+              <%== event.description %>
+            </div>
+          <% end %>
+
+          <% if event.website.present? %>
+            <div class="show_website">
+              <%= link_to 'Click here for even more information', event.website %>
+            </div>
+          <% end %>
+
+        <% displayed_events[event.lastfm_id] = true %>
+        </div>  <!-- single_event close -->
+
+    <% end %>
 <% end %>
 

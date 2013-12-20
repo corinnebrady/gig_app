@@ -1,6 +1,14 @@
-<h1>Welcome to Gig Notes</h1>
+<div class="page_container">
+  <h1 class="front_title">Gig Notes</h1>
 
-    <div><%= link_to('Sign Up', new_user_registration_path) %></div>
-    <div><%= link_to('Sign In', new_user_session_path) %></div>
-    <div><%= link_to('Quick Search', pages_search_path) %></div>
+  <h3>Get notes on all the gigs coming to you city</h3>
 
+  <%== link_to('Quick Search', pages_search_path, :class => 'quick_search_link') %>
+<!--   <a href="< %= pages_search_path %> " class='quick_search_link'>Quick<br>Search</a>
+ -->
+  <div class="sign">
+    <div class="sign_link"><%= link_to('Sign Up', new_user_registration_path, :class => 'button_link') %></div>
+
+    <div class="sign_link"><%= link_to('Sign In', new_user_session_path, :class => 'button_link') %></div>
+  </div>
+</div>

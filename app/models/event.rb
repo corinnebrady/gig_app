@@ -63,7 +63,7 @@ class Event < ActiveRecord::Base
             :website => event['website'],
             :artist_id => artist.id,
             :lastfm_id =>event['id'],
-            :artists => event['artists']['artist'].respond_to?(:join) ? event['artists']['artist'].join(', ')
+            :artists => event['artists']['artist'].respond_to?(:join) ? event['artists']['artist'].join('<br>')
                                                                        : event['artists']['artist'],
             :headliner => event['artists']['headliner'],
             :description => event['description'],

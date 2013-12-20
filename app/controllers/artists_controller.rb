@@ -55,6 +55,7 @@ class ArtistsController < ApplicationController
         end
       end
     end
+    Event.fetch_by_user(current_user)
     redirect_to events_show_all_path
   end
 
