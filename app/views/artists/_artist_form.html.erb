@@ -5,7 +5,7 @@
 
 <ul id="artists_display">
 
-  <% if current_user.present? %>
+  <% if current_user.present? && params['action'] != 'search' %>
     <% current_user.artists.order(:created_at).reverse.each do |artist| %>
       <li class="existing_artist"><%= text_field_tag("artist[#{artist.id}]", artist.name) %></li>
     <% end %>
