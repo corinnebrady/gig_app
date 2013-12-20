@@ -142,7 +142,7 @@ a.quick_search_link {
   margin: 40px 10px;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.8);
-  min-height: 400px;
+  min-height: 320px;
   border: 10px solid $secondary-color;
 
   .show_when {
@@ -155,7 +155,7 @@ a.quick_search_link {
   img.event_image {
     float: right;
     max-width: 252px;
-    max-height: 300px;
+    max-height: 220px;
   }
 
   .show_who {
