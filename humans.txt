@@ -18,13 +18,13 @@ Location: Sydney, Australia.
 
 Name: name or url
 
-Everyone at GA
+Everyone at GA! This includes Joel, Daniel
 
 
 /* SITE */
 
 
-Last update: YYYY/MM/DD
+Last update: 2013/12/20
 
 Standards: HTML5, CSS3,..
 

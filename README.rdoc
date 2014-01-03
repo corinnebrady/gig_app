@@ -9,18 +9,17 @@ Wishlist/
 Future
 - reduce code ducplication
 - alert when location doesn't match with lastfm's locaiton list
-
-
-
-
-TO DO
-
 - fuzzy matching
-
 - make single event show page (maybe include images from events as well?)
-
-
 - delete all unused views
+- make copyright and contact details
+
+
+MUST DO:
+when a location is not recognized, it breaks, must put in an if statement and a redirect to try again
+
+
+
 
 
 

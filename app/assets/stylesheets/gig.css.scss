@@ -2,10 +2,13 @@ $text-color: rgb(255, 236, 124);
 $secondary-color: rgb(233, 176, 69);
 $link-color: #BD8F2E;
 
+$text-area-width: 250px;
+
 
 body {
   padding-top: 60px;
   color: $text-color;
+  margin-bottom: 20px;
 
   background: url('Stage_Vintage_Microphone_1080x1920.jpeg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -38,10 +41,20 @@ label {
   text-align: left;
   margin-top: 11px;
 }
+
 .general_button {
   background-color: $secondary-color;
   border: 2px solid $secondary-color;
+  color: black;
 }
+
+input {
+  padding-left: 5px;
+  background-color: #4A3816;
+  border: 2px solid $secondary-color;
+  color: rgba(255, 236, 124, 0.8);
+}
+
 
 //===============================================
 //            NAV
@@ -53,11 +66,12 @@ label {
 }
 
 .navbar > .container .navbar-brand {
-  color: $text-color;
+  color: $secondary-color;
 }
 
 .navbar > .container .navbar-brand:hover{
   color: $link-color;
+  font-weight: normal;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -66,6 +80,7 @@ label {
 
 .navbar-inverse .navbar-nav > li > a:hover {
   color: $link-color;
+  font-weight: normal;
 }
 
 
@@ -117,10 +132,10 @@ a.quick_search_link {
 // }
 
 
-.sign {
+.front_button_section {
   margin-top: 50px;
 
-  .sign_link {
+  .front_button_section_link {
     display: inline;
     padding: 10px;
   }
@@ -205,19 +220,43 @@ a.quick_search_link {
   border: 2px solid $secondary-color;
   text-align: center;
   margin: auto;
+  color: black;
 }
 
-.existing_artist {
-  margin: 10px;
+.input_forms {
+
+  #artist {
+    width: $text-area-width;
+  }
+
+  #add_artist {
+    margin-left: 75px;
+  }
+
+  #artists_display {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      margin: 10px 0;
+
+      input {
+        padding-left: 5px;
+        background-color: #4A3816;
+        border: 2px solid $secondary-color;
+        color: rgba(255, 236, 124, 0.8);
+        width: $text-area-width;
+      }
+
+    }
+  }
 }
 
-ul {
-  margin-left: 0;
-  padding-left: 0;
-}
 
 
-
+// $text-color: rgb(255, 236, 124);
+// $secondary-color: rgb(233, 176, 69);
+// $link-color: #BD8F2E;
 
 
 
@@ -231,6 +270,41 @@ ul {
   margin-bottom: 30px;
 }
 
+.input_forms {
+
+  text-align: left;
+  margin-left: 39px;
+
+  .password_instructions {
+    margin-top: -6px;
+    margin-bottom: 1px;
+    font-style: italic;
+    font-size: 11px;
+    max-width: 220px;
+    letter-spacing: 0.4px;
+  }
+
+  #artist {
+    width: $text-area-width;
+  }
+
+  #quick_search_city {
+    width: $text-area-width;
+  }
+}
+
+.optional {
+  color: #E96D03;
+}
+
+
+
+
+// Placeholder color:
+::-webkit-input-placeholder { color: black; }
+:-moz-placeholder { color: black; }
+::-moz-placeholder { color: black; }
+:-ms-input-placeholder { color: black; }
 
 
 

@@ -4,11 +4,18 @@
   <h3>Get notes on all the gigs coming to you city</h3>
 
   <%== link_to('Quick Search', pages_search_path, :class => 'quick_search_link') %>
-<!--   <a href="< %= pages_search_path %> " class='quick_search_link'>Quick<br>Search</a>
- -->
-  <div class="sign">
-    <div class="sign_link"><%= link_to('Sign Up', new_user_registration_path, :class => 'button_link') %></div>
 
-    <div class="sign_link"><%= link_to('Sign In', new_user_session_path, :class => 'button_link') %></div>
-  </div>
+
+  <% if user_signed_in? %>
+    <div class="front_button_section">
+      <div class="front_button_section_link"><%= link_to('Events', events_show_all_path, :class => 'button_link') %></div>
+      <div class="front_button_section_link"><%= link_to('Artists', edit_artists_path, :class => 'button_link') %></div>
+    </div>
+  <% else %>
+    <div class="front_button_section">
+      <div class="front_button_section_link"><%= link_to('Sign Up', new_user_registration_path, :class => 'button_link') %></div>
+      <div class="front_button_section_link"><%= link_to('Sign In', new_user_session_path, :class => 'button_link') %></div>
+    </div>
+  <% end %>
+
 </div>

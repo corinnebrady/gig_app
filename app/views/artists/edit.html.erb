@@ -4,7 +4,11 @@
 
   <%= form_tag artists_update_all_path do |f| %>
 
-    <%= render :partial => 'artists/artist_form' %>
+    <div class="input_forms">
+
+      <%= render :partial => 'artists/artist_form' %>
+
+    </div> <!-- input_forms close -->
 
 
     <%= submit_tag 'Get Events', :class => 'get_event_button' %>

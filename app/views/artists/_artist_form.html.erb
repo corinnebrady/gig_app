@@ -1,14 +1,16 @@
-<input id="artist" type="text" placeholder="Artist">
-<br>
-<input type="button" id="add_artist" value="Add artist" class="general_button">
-<input type="hidden" name="artist_names" id="artist_names">
 
-<ul id="artists_display">
+  <label for="artist">Artist:</label><br>
+  <input id="artist" type="text" placeholder="Add a single musician or band here">
+  <br>
+  <input type="button" id="add_artist" value="Add Artist" class="general_button">
+  <input type="hidden" name="artist_names" id="artist_names">
 
-  <% if current_user.present? && params['action'] != 'search' %>
-    <% current_user.artists.order(:created_at).reverse.each do |artist| %>
-      <li class="existing_artist"><%= text_field_tag("artist[#{artist.id}]", artist.name) %></li>
+  <ul id="artists_display">
+
+    <% if current_user.present? && params['action'] != 'search' %>
+      <% current_user.artists.order(:created_at).reverse.each do |artist| %>
+        <li ><%= text_field_tag("artist[#{artist.id}]", artist.name) %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 

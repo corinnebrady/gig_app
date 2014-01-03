@@ -31,8 +31,7 @@ class Event < ActiveRecord::Base
     # Code below is not longer necessary but it is how you create a hash from an array with all values equal to true
     # @artists_hash = Hash[*artists_array.map {|x| [x, nil]}.flatten]
 
-    # location = current_user.location
-    location = 'sydney'
+    location = user.location
     url = "http://ws.audioscrobbler.com/2.0/?method=geo.getevents&location=#{location}&api_key=d5457080d2066b9f7a7da03055cc8181&format=json&limit=200"
     @events = HTTParty.get url
 

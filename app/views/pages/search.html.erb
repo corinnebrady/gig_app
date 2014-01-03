@@ -4,13 +4,18 @@
 
 
   <%= form_tag pages_show_all_qs_path do  %>
+    <div class="input_forms">
 
-    <%= text_field_tag :location, nil, :required => true, :placeholder => 'City' %>
+      <span class="optional">Required - </span>
+      <%= label_tag(:location, "City:") %><br>
+      <%= text_field_tag :location, nil, :required => true, :placeholder => 'Required', :id => 'quick_search_city' %>
 
-    <br>
-    <br>
+      <br>
+      <br>
 
-    <%= render :partial => 'artists/artist_form' %>
+      <span class="optional">Optional - </span>
+      <%= render :partial => 'artists/artist_form' %>
+    </div> <!-- input_forms close -->
 
     <%= submit_tag 'Get Events', :class => 'get_event_button' %>
 
