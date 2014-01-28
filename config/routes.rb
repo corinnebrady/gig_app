@@ -5,6 +5,7 @@ GigApp::Application.routes.draw do
   root :to => "pages#index"
   get "/pages/search" => "pages#search"
   post "/pages/show_all_qs" => "pages#show_all_qs"
+  get "/pages/about" => "pages#about"
 
   get "/events/show" => "events#show"
   get "/events/show_all" => "events#show_all"

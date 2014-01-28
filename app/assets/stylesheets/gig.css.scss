@@ -91,6 +91,9 @@ input {
 .page_container {
   max-width: 300px;
   text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 10px solid black;
 
   h1.front_title {
     font-size: 4em;
@@ -219,7 +222,7 @@ a.quick_search_link {
   background-color: $secondary-color;
   border: 2px solid $secondary-color;
   text-align: center;
-  margin: auto;
+  margin-left: 42px;
   color: black;
 }
 
@@ -259,6 +262,33 @@ a.quick_search_link {
 // $link-color: #BD8F2E;
 
 
+//===============================================
+//            ABOUT
+//===============================================
+
+.about {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 10px solid black;
+  margin-top: -35px;
+
+  h1 {
+  }
+
+  h4 {
+    padding-top: 15px;
+    font-size: 1.6em;
+    color: $secondary-color;
+  }
+  h5 {
+    text-align: justify;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-indent: 2em
+  }
+
+}
 
 //===============================================
 //            OTHER
@@ -293,12 +323,19 @@ a.quick_search_link {
   }
 }
 
-.optional {
-  color: #E96D03;
+footer {
+  font-size: .9em;
+  color: $link-color;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  position: fixed;
 }
 
 
-
+.optional {
+  color: #E96D03;
+}
 
 // Placeholder color:
 ::-webkit-input-placeholder { color: black; }
